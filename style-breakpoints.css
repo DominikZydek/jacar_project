@@ -1,0 +1,165 @@
+/* tablets */
+
+@media (max-width: 1140px) {
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .why-us {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 50px;
+  }
+
+  .why-us h2 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .why-us h2, .why-us ul {
+    width: auto;
+  }
+
+  .why-us ul {
+    gap: 20px;
+  }
+
+  .why-us svg {
+    max-width: 100px;
+  }
+
+  .testimonials h2 {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .testimonials-slider {
+    padding: 0;
+  }
+
+  .testimonials-slider .card:nth-child(2), .testimonials-slider .card:nth-child(4) {
+    display: none;
+  }
+
+  .testimonials-slider .card {
+    max-width: 50%;
+  }
+
+  .testimonial-person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-form h2 {
+    font-size: 26px;
+  }
+
+  .contact-form h3 {
+    font-size: 20px;
+  }
+
+  .contact-form form {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-form .left-side, .contact-form .right-side {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-form input, .contact-form button {
+    width: 100%;
+  }
+  
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 50px;
+  }
+
+  footer .contact-us {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* phones */
+
+@media (max-width: 721px) {
+
+    nav {
+        padding-right: 65px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-dropdown.active {
+        display: block;
+        position: absolute;
+        background-color: #132f40;
+        padding: 15px 30px;
+        top: 80px;
+        border-radius: 10px;
+        right: 0;
+        z-index: 999;
+    }
+
+    .menu-dropdown.active ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-dropdown.active a {
+        color: #eff3f4;
+        font-size: 18px;
+    }
+
+    .menu-dropdown.active li {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu-dropdown.active li:last-child {
+        margin-top: 20px;
+        background-color: #60a672;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .menu-toggle svg {
+        width: 25px;
+        fill: #eff3f4;
+    }
+
+    .why-us {
+        height: auto;
+    }
+
+    .testimonials, .testimonials-slider {
+        height: auto;
+    }
+
+    .contact-form textarea {
+        width: 350px;
+    }
+}

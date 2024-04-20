@@ -37,6 +37,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo-header {
@@ -58,6 +59,14 @@ nav {
     background-color: #60a672;
     padding: 10px 20px;
     border-radius: 10px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-dropdown {
+    display: none;
 }
 
 /* hero */
@@ -182,6 +191,8 @@ nav {
 .card {
     padding: 25px;
     max-width: 30%;
+    border: 1px solid #1e1e1e;
+    border-radius: 10px;
 }
 
 .card h3 {

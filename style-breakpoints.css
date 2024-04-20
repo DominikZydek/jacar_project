@@ -1,8 +1,7 @@
 /* tablets */
 
 @media (max-width: 1140px) {
-
-    /* index.html */
+  /* index.html */
 
   .hero h1 {
     font-size: 48px;
@@ -21,7 +20,8 @@
     text-align: center;
   }
 
-  .why-us h2, .why-us ul {
+  .why-us h2,
+  .why-us ul {
     width: auto;
   }
 
@@ -42,7 +42,8 @@
     padding: 0;
   }
 
-  .testimonials-slider .card:nth-child(2), .testimonials-slider .card:nth-child(4) {
+  .testimonials-slider .card:nth-child(2),
+  .testimonials-slider .card:nth-child(4) {
     display: none;
   }
 
@@ -76,16 +77,18 @@
     gap: 20px;
   }
 
-  .contact-form .left-side, .contact-form .right-side {
+  .contact-form .left-side,
+  .contact-form .right-side {
     justify-content: center;
     align-items: center;
     text-align: center;
   }
 
-  .contact-form input, .contact-form button {
+  .contact-form input,
+  .contact-form button {
     width: 100%;
   }
-  
+
   footer {
     flex-direction: column;
     gap: 20px;
@@ -99,7 +102,8 @@
 
   /* meet-us.html */
 
-  .main-employee, .employees {
+  .main-employee,
+  .employees {
     flex-direction: column;
     gap: 20px;
   }
@@ -108,97 +112,129 @@
     min-width: 100%;
   }
 
-  .employee, .main-employee {
+  .employee,
+  .main-employee {
     max-width: 100%;
+  }
+
+  /* services.html */
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* phones */
 
 @media (max-width: 721px) {
+  /* index.html */
 
-    /* index.html */
+  nav {
+    padding-right: 65px;
+  }
 
-    nav {
-        padding-right: 65px;
-    }
+  .menu {
+    display: none;
+  }
 
-    .menu {
-        display: none;
-    }
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
 
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-    }
+  .menu-dropdown.active {
+    display: block;
+    position: absolute;
+    background-color: #132f40;
+    padding: 15px 30px;
+    top: 80px;
+    border-radius: 10px;
+    right: 0;
+    z-index: 999;
+  }
 
-    .menu-dropdown.active {
-        display: block;
-        position: absolute;
-        background-color: #132f40;
-        padding: 15px 30px;
-        top: 80px;
-        border-radius: 10px;
-        right: 0;
-        z-index: 999;
-    }
+  .menu-dropdown.active ul {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .menu-dropdown.active ul {
-        display: flex;
-        flex-direction: column;
-    }
+  .menu-dropdown.active a {
+    color: #eff3f4;
+    font-size: 18px;
+  }
 
-    .menu-dropdown.active a {
-        color: #eff3f4;
-        font-size: 18px;
-    }
+  .menu-dropdown.active li {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
 
-    .menu-dropdown.active li {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-    }
+  .menu-dropdown.active li:last-child {
+    margin-top: 20px;
+    background-color: #60a672;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
 
-    .menu-dropdown.active li:last-child {
-        margin-top: 20px;
-        background-color: #60a672;
-        padding: 5px 10px;
-        border-radius: 10px;
-    }
+  .menu-toggle svg {
+    width: 25px;
+    fill: #eff3f4;
+  }
 
-    .menu-toggle svg {
-        width: 25px;
-        fill: #eff3f4;
-    }
+  .why-us {
+    height: auto;
+  }
 
-    .why-us {
-        height: auto;
-    }
+  .testimonials,
+  .testimonials-slider {
+    height: auto;
+  }
 
-    .testimonials, .testimonials-slider {
-        height: auto;
-    }
+  .contact-form textarea {
+    width: 350px;
+  }
 
-    .contact-form textarea {
-        width: 350px;
-    }
+  /* meet-us.html */
 
+  .meet-us {
+    padding: 20px 20px;
+  }
 
-    /* meet-us.html */
+  .main-employee {
+    min-width: auto;
+  }
 
-    .meet-us {
-        padding: 20px 20px;
-    }
+  .meet-us h2 {
+    font-size: 24px;
+  }
 
-    .main-employee {
-        min-width: auto;
-    }
+  .meet-us p {
+    font-size: 16px;
+  }
 
-    .meet-us h2 {
-        font-size: 24px;
-      }
-    
-      .meet-us p {
-        font-size: 16px;
-      }
+  /* services.html */
+
+  .services-section {
+    margin: 0;
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 25px;
+  }
+
+  .services-section h2 {
+    font-size: 24px;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service {
+    height: 200px;
+  }
+
+  .service h3 {
+    font-size: 20px;
+  }
 }

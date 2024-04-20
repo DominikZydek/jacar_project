@@ -1,6 +1,9 @@
 /* tablets */
 
 @media (max-width: 1140px) {
+
+    /* index.html */
+
   .hero h1 {
     font-size: 48px;
   }
@@ -93,11 +96,28 @@
     flex-direction: column;
     gap: 20px;
   }
+
+  /* meet-us.html */
+
+  .main-employee, .employees {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .main-employee .employee-img {
+    min-width: 100%;
+  }
+
+  .employee, .main-employee {
+    max-width: 100%;
+  }
 }
 
 /* phones */
 
 @media (max-width: 721px) {
+
+    /* index.html */
 
     nav {
         padding-right: 65px;
@@ -162,4 +182,23 @@
     .contact-form textarea {
         width: 350px;
     }
+
+
+    /* meet-us.html */
+
+    .meet-us {
+        padding: 20px 20px;
+    }
+
+    .main-employee {
+        min-width: auto;
+    }
+
+    .meet-us h2 {
+        font-size: 24px;
+      }
+    
+      .meet-us p {
+        font-size: 16px;
+      }
 }

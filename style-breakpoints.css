@@ -122,6 +122,18 @@
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* make-an-appointment.html */
+
+  .appointment-form {
+    height: auto;
+  }
+
+  .appointment-form form {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
 }
 
 /* phones */
@@ -236,5 +248,19 @@
 
   .service h3 {
     font-size: 20px;
+  }
+
+  /* make-an-appointment.html */
+
+  .ui-datepicker {
+    width: 350px;
+  }
+
+  .appointment-form select {
+    width: 350px;
+  }
+
+  .appointment-form textarea {
+    width: 350px;
   }
 }

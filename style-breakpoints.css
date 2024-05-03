@@ -263,4 +263,18 @@
   .appointment-form textarea {
     width: 350px;
   }
+
+  /* service.html */
+
+  .service-subpage {
+    padding: 20px 20px;
+  }
+
+  .service-subpage h2 {
+    font-size: 24px;
+  }
+
+  .service-subpage p {
+    font-size: 16px;
+  }
 }

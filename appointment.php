@@ -52,7 +52,9 @@ $message = $_POST['message'];
         </nav>
     </header>
     <main>
-        <table>
+        <div class="appointment-confirmation">
+            <h2>Potwierdzenie terminu</h2>
+            <table>
             <tr>
                 <th>Data</th>
                 <th>Usługa</th>
@@ -66,6 +68,8 @@ $message = $_POST['message'];
                 <td><?php echo $message; ?></td>
             </tr>
         </table>
+        <a href="./make-an-appointment.html" class="button">Powrót</a>
+        </div>
     </main>
     <footer>
         <div class="logo-section">

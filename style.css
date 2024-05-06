@@ -697,3 +697,48 @@ footer .e-mail-with-icon {
   padding: 10px 20px;
   border-radius: 10px;
 }
+
+/* appointment.php */
+
+.appointment-confirmation {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  background-color: #132f40;
+}
+
+.appointment-confirmation h2 {
+  font-size: 32px;
+  color: #60a672;
+}
+
+.appointment-confirmation table {
+  width: 50%;
+  border-collapse: collapse;
+}
+
+.appointment-confirmation td, .appointment-confirmation th {
+  border: 1px solid #eff3f4;
+  padding: 5px;
+}
+
+.appointment-confirmation th {
+  background-color: #60a672;
+  color: #132f40;
+}
+
+.appointment-confirmation td {
+  background-color:#132f40;
+  color: #eff3f4;
+}
+
+.appointment-confirmation a {
+  color: #eff3f4;
+  font-size: 18px;
+  background-color: #60a672;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+

@@ -707,6 +707,7 @@ footer .e-mail-with-icon {
   align-items: center;
   gap: 70px;
   background-color: #132f40;
+  min-height: 70vh;
 }
 
 .appointment-confirmation h2 {
@@ -715,7 +716,7 @@ footer .e-mail-with-icon {
 }
 
 .appointment-confirmation table {
-  width: 50%;
+  width: 75%;
   border-collapse: collapse;
 }
 

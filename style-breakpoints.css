@@ -134,6 +134,16 @@
     gap: 20px;
     align-items: center;
   }
+
+  /* appointment.php */
+
+  .appointment-confirmation {
+    padding: 20px 50px;
+  }
+
+  .appointment-confirmation table {
+    width: 100%;
+  }
 }
 
 /* phones */
@@ -276,5 +286,16 @@
 
   .service-subpage p {
     font-size: 16px;
+  }
+
+  /* appointment.php */
+
+  .appointment-confirmation {
+    padding: 20px 20px;
+    min-height: auto;
+  }
+
+  .appointment-confirmation h2 {
+    font-size: 24px;
   }
 }

@@ -18,6 +18,7 @@
                 <li><a href="./index.php"><b>Strona główna</b></a></li>
                 <li><a href="./meet-us.php">Poznaj ekipę</a></li>
                 <li><a href="./services.php">Usługi</a></li>
+                <li><a href="./profile.php">Mój profil</a></li>
                 <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
               <div class="menu-toggle">
@@ -27,6 +28,7 @@
                 <li><a href="./index.php"><b>Strona główna</b></a></li>
                 <li><a href="./meet-us.php">Poznaj ekipę</a></li>
                 <li><a href="./services.php">Usługi</a></li>
+                <li><a href="./profile.php">Mój profil</a></li>
                 <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
         </nav>

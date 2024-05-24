@@ -422,7 +422,7 @@ footer .e-mail-with-icon {
 .employees {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .employee {

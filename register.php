@@ -10,18 +10,6 @@ require_once './db.php';
 
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 
-// check if e-mail and login are not already in the database
-$sql = "SELECT * FROM users WHERE login = '$login' OR email = '$email'";
-if ($result = $conn->query($sql)) {
-    if ($result->num_rows > 0) {
-        echo("User with this login or e-mail already exists");
-        exit();
-    }
-} else {
-    echo("Error: " . $conn->error);
-    exit();
-}
-
 // check if login is alphanumeric
 if (!ctype_alnum($login)) {
     echo("Login must be alphanumeric");
@@ -46,10 +34,23 @@ if (strlen($password) < 8) {
     exit();
 }
 
+// check if e-mail and login are not already in the database
+$sql = "SELECT * FROM users WHERE username = '$login' OR email = '$email'";
+if ($result = $conn->query($sql)) {
+    if ($result->num_rows > 0) {
+        echo("User with this login or e-mail already exists");
+        exit();
+    }
+} else {
+    echo("Error: " . $conn->error);
+    exit();
+}
+
 if ($conn->connect_errno != 0) {
     echo("Connection failed: " . $conn->connect_errno);
 } else {
-    $sql = "INSERT INTO users (login, password, email, full_name) VALUES ('$login', '$hashedPassword', '$email', '$full_name')";
+    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "INSERT INTO users (username, password, email, full_name) VALUES ('$login', '$hashedPassword', '$email', '$full_name')";
     if ($result = $conn->query($sql)) {
         session_start();
         $_SESSION['login'] = $login;

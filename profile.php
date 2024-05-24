@@ -4,6 +4,25 @@
     if(!isset($_SESSION['login'])){
         header('Location: ./login-screen.php');
         exit();
+    } else {
+        $login = $_SESSION['login'];
+
+        require_once './db.php';
+
+        $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+
+        if ($conn->connect_errno != 0) {
+            echo("Connection failed: " . $conn->connect_errno);
+        } else {
+            $sql = "SELECT * FROM users WHERE username = '$login'";
+            if ($result = $conn->query($sql)) {
+                $user = $result->fetch_assoc();
+                $full_name = $user['full_name'];
+                $email = $user['email'];
+            } else {
+                echo("Error: " . $conn->error);
+            }
+        }
     }
 
 ?>
@@ -44,7 +63,23 @@
         </nav>
     </header>
     <main>
-
+        <div class="profile-container">
+            <table>
+                <tr>
+                    <td>Imię i nazwisko:</td>
+                    <td><?php echo($full_name); ?></td>
+                </tr>
+                <tr>
+                    <td>Login:</td>
+                    <td><?php echo($login); ?></td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td><?php echo($email); ?></td>
+                </tr>
+            </table>
+            <a href="./logout.php">Wyloguj</a>
+        </div>
     </main>
     <footer>
         <div class="logo-section">

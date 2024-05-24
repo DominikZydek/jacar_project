@@ -12,18 +12,23 @@
 </head>
 <body>
     <main>
-        <div class="register-screen">
-            <h2>Rejestracja</h2>
-            <form action="./register.php" method="POST">
-                <input type="text" name="name" id="name" placeholder="Imię" required>
-                <input type="text" name="surname" id="surname" placeholder="Nazwisko" required>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <input type="text" name="login" id="login" placeholder="Login" required>
-                <input type="password" name="password" id="password" placeholder="Hasło" required>
-                <input type="password" name="password2" id="password2" placeholder="Powtórz hasło" required>
-                <button type="submit">Zarejestruj</button>
-                <a href="./login-screen.php">Zaloguj się</a>
-            </form>
+        <div class="register-screen-container">
+            <div class="register-screen">
+            <div class="register-header">
+                <h2>Rejestracja do</h2>
+                <img src="./assets/logo.png" alt="logo" class="logo-login">
+            </div>
+                <form action="./register.php" method="POST">
+                    <input type="text" name="name" id="name" placeholder="Imię" required>
+                    <input type="text" name="surname" id="surname" placeholder="Nazwisko" required>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="text" name="login" id="login" placeholder="Login" required>
+                    <input type="password" name="password" id="password" placeholder="Hasło" required>
+                    <input type="password" name="password2" id="password2" placeholder="Powtórz hasło" required>
+                    <button type="submit">Zarejestruj</button>
+                    <a href="./login-screen.php">Masz już konto? Zaloguj się</a>
+                </form>
+            </div>
         </div>
     </main>
 

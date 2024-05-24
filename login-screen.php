@@ -12,14 +12,19 @@
 </head>
 <body>
     <main>
-        <div class="login-screen">
-            <h2>Logowanie</h2>
-            <form action="./login.php" method="POST">
-                <input type="text" name="login" id="login" placeholder="Login" required>
-                <input type="password" name="password" id="password" placeholder="Hasło" required>
-                <button type="submit">Zaloguj</button>
-                <a href="./register-screen.php">Zarejestruj się</a>
-            </form>
+        <div class="login-screen-container">
+            <div class="login-screen">
+                <div class="login-header">
+                    <h2>Logowanie do</h2>
+                    <img src="./assets/logo.png" alt="logo" class="logo-login">
+                </div>
+                <form action="./login.php" method="POST">
+                    <input type="text" name="login" id="login" placeholder="Login" required>
+                    <input type="password" name="password" id="password" placeholder="Hasło" required>
+                    <button type="submit">Zaloguj</button>
+                    <a href="./register-screen.php">Nie masz konta? Zarejestruj się</a>
+                </form>
+            </div>
         </div>
     </main>
 

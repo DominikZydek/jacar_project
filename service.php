@@ -4,7 +4,7 @@ $service_id = $_GET['service'];
 
 require_once('./db.php');
 
-$conn = new mysqli($host, $user, $password, $name);
+$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 
 if ($conn->connect_errno != 0) {
     echo("Connection failed: " . $conn->connect_errno);

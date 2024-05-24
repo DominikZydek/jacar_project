@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    if(!isset($_SESSION['logged'])){
+    if(!isset($_SESSION['login'])){
         header('Location: ./login-screen.php');
         exit();
     }

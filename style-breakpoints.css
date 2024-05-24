@@ -298,4 +298,23 @@
   .appointment-confirmation h2 {
     font-size: 24px;
   }
+
+  /* login-screen.php // register-screen.php */
+
+  .login-screen,
+  .register-screen {
+    padding: 20px 20px;
+    min-width: auto;
+    width: 75%;
+  }
+
+  .login-screen h2,
+  .register-screen h2 {
+    font-size: 24px;
+  }
+
+  .login-screen img,
+  .register-screen img {
+    width: 100px;
+  }
 }

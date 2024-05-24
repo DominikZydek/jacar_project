@@ -1,5 +1,6 @@
 <?php
 
+// db query here 
 $costs = array(
     "Wymiana akumulatora" => 200,
     "Klocki hamulcowe" => 150,

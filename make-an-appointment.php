@@ -19,10 +19,10 @@
         <nav>
             <img src="./assets/logo.png" alt="logo" class="logo-header">
             <ul class="menu">
-                <li><a href="./index.html">Strona główna</a></li>
-                <li><a href="./meet-us.html">Poznaj ekipę</a></li>
-                <li><a href="./services.html">Usługi</a></li>
-                <li><a href="./make-an-appointment.html"><b>Umów się</b></a></li>
+                <li><a href="./index.php">Strona główna</a></li>
+                <li><a href="./meet-us.php">Poznaj ekipę</a></li>
+                <li><a href="./services.php">Usługi</a></li>
+                <li><a href="./make-an-appointment.php"><b>Umów się</b></a></li>
             </ul>
             <div class="menu-toggle">
                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -32,10 +32,10 @@
                 </svg>
             </div>
             <ul class="menu-dropdown">
-                <li><a href="./index.html">Strona główna</a></li>
-                <li><a href="./meet-us.html">Poznaj ekipę</a></li>
-                <li><a href="./services.html">Usługi</a></li>
-                <li><a href="./make-an-appointment.html"><b>Umów się</b></a></li>
+                <li><a href="./index.php">Strona główna</a></li>
+                <li><a href="./meet-us.php">Poznaj ekipę</a></li>
+                <li><a href="./services.php">Usługi</a></li>
+                <li><a href="./make-an-appointment.php"><b>Umów się</b></a></li>
             </ul>
         </nav>
     </header>

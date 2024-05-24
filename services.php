@@ -1,3 +1,25 @@
+<?php
+
+require_once('./db.php');
+
+$conn = new mysqli($host, $user, $password, $name);
+
+if ($conn->connect_errno != 0) {
+    echo("Connection failed: " . $conn->connect_errno);
+} else {
+    $sql = "SELECT * FROM services";
+
+    if ($result = $conn->query($sql)) {
+        $services = $result->fetch_all(MYSQLI_ASSOC);
+    } else {
+        echo("Error: " . $conn->error);
+    }
+}
+
+$conn->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -15,19 +37,19 @@
         <nav>
             <img src="./assets/logo.png" alt="logo" class="logo-header">
             <ul class="menu">
-                <li><a href="./index.html">Strona główna</a></li>
-                <li><a href="./meet-us.html">Poznaj ekipę</a></li>
-                <li><a href="./services.html"><b>Usługi</b></a></li>
-                <li><a href="./make-an-appointment.html">Umów się</a></li>
+                <li><a href="./index.php">Strona główna</a></li>
+                <li><a href="./meet-us.php">Poznaj ekipę</a></li>
+                <li><a href="./services.php"><b>Usługi</b></a></li>
+                <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
               <div class="menu-toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
               </div>
               <ul class="menu-dropdown">
-                <li><a href="./index.html">Strona główna</a></li>
-                <li><a href="./meet-us.html">Poznaj ekipę</a></li>
-                <li><a href="./services.html"><b>Usługi</b></a></li>
-                <li><a href="./make-an-appointment.html">Umów się</a></li>
+                <li><a href="./index.php">Strona główna</a></li>
+                <li><a href="./meet-us.php">Poznaj ekipę</a></li>
+                <li><a href="./services.php"><b>Usługi</b></a></li>
+                <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
         </nav>
     </header>
@@ -36,31 +58,31 @@
             <h2>Warsztat samochodowy</h2>
             <div class="services-grid">
                 <div class="service service-1">
-                    <h3>Wymiana akumulatora</h3>
+                    <h3><?php echo($services[0]['name']) ?></h3>
                 </div>
                 <div class="service service-2">
-                    <h3>Klocki hamulcowe</h3>
+                <h3><?php echo($services[1]['name']) ?></h3>
                 </div>
                 <div class="service service-3">
-                    <h3>Wymiana oleju</h3>
+                <h3><?php echo($services[2]['name']) ?></h3>
                 </div>
                 <div class="service service-4">
-                    <h3>Naprawa klimatyzacji</h3>
+                <h3><?php echo($services[3]['name']) ?></h3>
                 </div>
                 <div class="service service-5">
-                    <h3>Wymiana opon</h3>
+                <h3><?php echo($services[4]['name']) ?></h3>
                 </div>
             </div>
             <h2>Stacja Kontroli Pojazdów</h2>
             <div class="services-grid">
                 <div class="service service-6">
-                    <h3>Geometria kół</h3>
+                <h3><?php echo($services[5]['name']) ?></h3>
                 </div>
                 <div class="service service-7">
-                    <h3>Badanie diagnostyczne</h3>
+                <h3><?php echo($services[6]['name']) ?></h3>
                 </div>
                 <div class="service service-8">
-                    <h3>Przegląd techniczny</h3>
+                <h3><?php echo($services[7]['name']) ?></h3>
                 </div>
             </div>
         </div>

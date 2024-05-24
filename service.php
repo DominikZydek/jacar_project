@@ -1,3 +1,36 @@
+<?php
+
+$service_id = $_GET['service'];
+
+require_once('./db.php');
+
+$conn = new mysqli($host, $user, $password, $name);
+
+if ($conn->connect_errno != 0) {
+    echo("Connection failed: " . $conn->connect_errno);
+} else {
+    $parts = explode('-', $service_id);
+    $service_number = end($parts);
+    $sql = "SELECT * FROM services WHERE service_id = $service_number";
+
+    if ($result = $conn->query($sql)) {
+        $service = $result->fetch_assoc();
+
+        $service_name = $service['name'];
+        $service_img = $service_id . '.jpg';
+        $service_description = $service['description'];
+        $service_cost = $service['cost'];
+
+    } else {
+        echo("Error: " . $conn->error);
+    }
+}
+
+$conn->close();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -15,57 +48,29 @@
         <nav>
             <img src="./assets/logo.png" alt="logo" class="logo-header">
             <ul class="menu">
-                <li><a href="./index.html">Strona główna</a></li>
-                <li><a href="./meet-us.html"><b>Poznaj ekipę</b></a></li>
-                <li><a href="./services.html">Usługi</a></li>
-                <li><a href="./make-an-appointment.html">Umów się</a></li>
+                <li><a href="./index.php">Strona główna</a></li>
+                <li><a href="./meet-us.php">Poznaj ekipę</a></li>
+                <li><a href="./services.php"><b>Usługi</b></a></li>
+                <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
               <div class="menu-toggle">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
               </div>
               <ul class="menu-dropdown">
-                <li><a href="./index.html">Strona główna</a></li>
-                <li><a href="./meet-us.html"><b>Poznaj ekipę</b></a></li>
-                <li><a href="./services.html">Usługi</a></li>
-                <li><a href="./make-an-appointment.html">Umów się</a></li>
+                <li><a href="./index.php">Strona główna</a></li>
+                <li><a href="./meet-us.php">Poznaj ekipę</a></li>
+                <li><a href="./services.php"><b>Usługi</b></a></li>
+                <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
         </nav>
     </header>
     <main>
-        <div class="meet-us">
-            <div class="main-employee">
-                <div class="employee-img"></div>
-                <div class="employee-description">
-                    <h2>Imię Nazwisko</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eligendi sint saepe perspiciatis, enim hic eos odit dignissimos quas! Dicta, repellat! Nihil nostrum aperiam enim voluptate minima quisquam natus sint?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><br>Aliquid eligendi sint saepe perspiciatis, enim hic eos odit dignissimos quas! Dicta, repellat! Nihil nostrum aperiam enim voluptate minima quisquam natus sint?
-                    </p>
-                </div>
-            </div>
-            <div class="employees">
-                <div class="employee">
-                    <div class="employee-img employee-1"></div>
-                    <div class="employee-description">
-                        <h2>Imię Nazwisko</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eligendi sint saepe perspiciatis, enim hic eos odit dignissimos quas! Dicta, repellat! Nihil nostrum aperiam enim voluptate minima quisquam natus sint?</p>
-                    </div>
-                </div>
-                <div class="employee">
-                    <div class="employee-img employee-2"></div>
-                    <div class="employee-description">
-                        <h2>Imię Nazwisko</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eligendi sint saepe perspiciatis, enim hic eos odit dignissimos quas! Dicta, repellat! Nihil nostrum aperiam enim voluptate minima quisquam natus sint?</p>
-                    </div>
-                </div>
-                <div class="employee">
-                    <div class="employee-img employee-3"></div>
-                    <div class="employee-description">
-                        <h2>Imię Nazwisko</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eligendi sint saepe perspiciatis, enim hic eos odit dignissimos quas! Dicta, repellat! Nihil nostrum aperiam enim voluptate minima quisquam natus sint?</p>
-                    </div>
-                </div>
-            </div>
+        <div class="service-subpage">
+            <h2 class="service-name"><?php echo($service_name) ?></h2>
+            <img class="service-img" src="<?php echo('./assets/' . $service_img) ?>" alt="<?php $service_id ?>">
+            <h2>Cena orientacyjna: <span class="service-price"><?php echo($service_cost . ' zł') ?></span></h2>
+            <p class="service-description"><?php echo($service_description) ?></p>
+            <a class="service-appointment" href="./make-an-appointment.php">Umów się</a>
         </div>
     </main>
     <footer>

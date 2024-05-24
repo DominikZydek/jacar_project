@@ -69,15 +69,15 @@
                         <select name="service" id="service" required>
                             <option disabled selected value>-- Wybierz usługę --</option>
                             <option disabled value>-- Warsztat samochodowy --</option>
-                            <option value="Wymiana akumulatora">Wymiana akumulatora</option>
-                            <option value="Klocki hamulcowe">Klocki hamulcowe</option>
-                            <option value="Wymiana oleju">Wymiana oleju</option>
-                            <option value="Naprawa klimatyzacji">Naprawa klimatyzacji</option>
-                            <option value="Wymiana opon">Wymiana opon</option>
+                            <option value="1">Wymiana akumulatora</option>
+                            <option value="2">Klocki hamulcowe</option>
+                            <option value="3">Wymiana oleju</option>
+                            <option value="4">Naprawa klimatyzacji</option>
+                            <option value="5">Wymiana opon</option>
                             <option disabled value>-- Stacja Kontroli Pojazdów --</option>
-                            <option value="Geometria kół">Geometria kół</option>
-                            <option value="Badanie diagnostyczne">Badanie diagnostyczne</option>
-                            <option value="Przegląd techniczny">Przegląd techniczny</option>
+                            <option value="6">Geometria kół</option>
+                            <option value="7">Badanie diagnostyczne</option>
+                            <option value="8">Przegląd techniczny</option>
                         </select>
                     </div>
                     <div class="add-message">

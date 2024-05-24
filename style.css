@@ -92,7 +92,8 @@ nav {
   font-size: 64px;
   max-width: 80%;
   text-align: center;
-  color: #1e1e1e;
+  color: #eff3f4;
+  text-shadow: #1e1e1e 3px 3px;
 }
 
 /* dlaczego my */
@@ -816,3 +817,54 @@ footer .e-mail-with-icon {
   text-align: center;
 }
 
+.login-screen .login-error,
+.register-screen .register-error {
+  color: #eff3f4;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  background-color: #9c0000;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* profile.php */
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 70vh;
+  background-color: #132f40;
+}
+
+.profile-container h2 {
+  font-size: 32px;
+  color: #60a672;
+}
+
+.profile-container table {
+  border-collapse: collapse;
+}
+
+.profile-container td {
+  border: 1px solid #eff3f4;
+  padding: 10px;
+  color: #eff3f4;
+  font-size: 18px;
+}
+
+.profile-container .profile-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-container .profile-buttons a {
+  color: #eff3f4;
+  font-size: 18px;
+  background-color: #60a672;
+  padding: 10px 20px;
+  border-radius: 10px;
+}

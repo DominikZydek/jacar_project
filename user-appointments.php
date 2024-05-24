@@ -1,39 +1,45 @@
 <?php
+    session_start();
 
-session_start();
+    if (!isset($_SESSION['login'])) {
+        header('Location: ./login-screen.php');
+        exit();
+    }
 
-$date = empty($_POST['date']) ? date("Y-m-d") : $_POST['date']; 
-$service_id = $_POST['service'];
-$message = $_POST['message'];
-$login = $_SESSION['login'];
+    require_once './db.php';
 
-require_once './db.php';
+    $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 
-$conn = new mysqli($db_host, $db_user, $db_password, $db_name);
+    if ($conn->connect_errno != 0) {
+        echo("Connection failed: " . $conn->connect_errno);
+    } else {
+        $login = $_SESSION['login'];
+        $sql = "SELECT * FROM appointments WHERE user_id = (SELECT user_id FROM users WHERE username = '$login')";
 
-if ($conn->connect_errno != 0) {
-    echo("Connection failed: " . $conn->connect_errno);
-} else {
-    $sql = "SELECT * FROM services WHERE service_id = $service_id";
+        if ($result = $conn->query($sql)) {
+            $appointments = [];
+            while ($row = $result->fetch_assoc()) {
+                $appointment = [];
+                $appointment['date'] = $row['date'];
+                $appointment['service_id'] = $row['service_id'];
+                $appointment['message'] = $row['message'];
 
-    if ($result = $conn->query($sql)) {
-        $service = $result->fetch_assoc();
+                $service_id = $row['service_id'];
+                $sql = "SELECT * FROM services WHERE service_id = $service_id";
+                if ($result2 = $conn->query($sql)) {
+                    $service = $result2->fetch_assoc();
+                    $appointment['service_name'] = $service['name'];
+                    $appointment['service_cost'] = $service['cost'];
+                } else {
+                    echo("Error: " . $conn->error);
+                }
 
-        $service_name = $service['name'];
-        $service_cost = $service['cost'];
-
-        // insert appointment into database
-        $sql = "INSERT INTO appointments (date, service_id, user_id, message) VALUES ('$date', $service_id, (SELECT(user_id) FROM users WHERE username = '$login'), '$message')";
-        if ($conn->query($sql)) {
-            // everything is fine
+                $appointments[] = $appointment;
+            }
         } else {
             echo("Error: " . $conn->error);
         }
-    } else {
-        echo("Error: " . $conn->error);
     }
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -71,22 +77,32 @@ if ($conn->connect_errno != 0) {
     </header>
     <main>
         <div class="appointment-confirmation">
-            <h2>Potwierdzenie terminu</h2>
-            <table>
-            <tr>
-                <th>Data</th>
-                <th>Usługa</th>
-                <th>Koszt</th>
-                <th>Wiadomość</th>
-            </tr>
-            <tr>
-                <td><?php echo $date; ?></td>
-                <td><?php echo $service_name; ?></td>
-                <td><?php echo $service_cost ?> zł</td>
-                <td><?php echo $message; ?></td>
-            </tr>
-        </table>
-        <a href="./make-an-appointment.php" class="button">Powrót</a>
+            <?php
+
+            if (count($appointments) > 0) {
+                echo("<h2>Twoje umówione wizyty</h2>");
+                echo("<table>");
+                echo("<tr>");
+                echo("<th>Data</th>");
+                echo("<th>Usługa</th>");
+                echo("<th>Koszt</th>");
+                echo("<th>Wiadomość</th>");
+                echo("</tr>");
+                foreach ($appointments as $appointment) {
+                    echo("<tr>");
+                    echo("<td>" . $appointment['date'] . "</td>");
+                    echo("<td>" . $appointment['service_name'] . "</td>");
+                    echo("<td>" . $appointment['service_cost'] . " zł</td>");
+                    echo("<td>" . $appointment['message'] . "</td>");
+                    echo("</tr>");
+                }
+                echo("</table>");
+            } else {
+                echo("<h2>Brak umówionych wizyt</hecho>");
+            }
+
+            ?>
+            <a href="./profile.php" class="button">Powrót</a>
         </div>
     </main>
     <footer>

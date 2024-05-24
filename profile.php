@@ -64,6 +64,7 @@
     </header>
     <main>
         <div class="profile-container">
+            <h2>Witaj, <?php echo($full_name); ?>!</h2>
             <table>
                 <tr>
                     <td>Imię i nazwisko:</td>
@@ -78,7 +79,11 @@
                     <td><?php echo($email); ?></td>
                 </tr>
             </table>
-            <a href="./logout.php">Wyloguj</a>
+            <div class="profile-buttons">
+                <a href="./user-appointments.php">Historia wizyt</a>
+                <a href="./logout.php">Wyloguj</a>
+            </div>
+            
         </div>
     </main>
     <footer>

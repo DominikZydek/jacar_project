@@ -14,12 +14,21 @@ if ($conn->connect_errno != 0) {
 } else {
     $sql = "SELECT * FROM users WHERE username = '$login'";
     if ($result = $conn->query($sql)) {
-        $user = $result->fetch_assoc();
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['login'] = $login;
-            header('Location: ./profile.php');
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['login'] = $login;
+                header('Location: ./profile.php');
+                exit();
+            } else {
+                $_SESSION['error'] = "Błędny login lub hasło";
+                header('Location: ./login-screen.php');
+                exit();
+            }
         } else {
-            echo("Invalid login or password");
+            $_SESSION['error'] = "Błędny login lub hasło";
+            header('Location: ./login-screen.php');
+            exit();
         }
     } else {
         echo("Error: " . $conn->error);

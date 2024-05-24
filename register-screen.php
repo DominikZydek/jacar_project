@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -26,6 +30,12 @@
                     <input type="password" name="password" id="password" placeholder="Hasło" required>
                     <input type="password" name="password2" id="password2" placeholder="Powtórz hasło" required>
                     <button type="submit">Zarejestruj</button>
+                    <?php 
+                        if (isset($_SESSION['error'])) {
+                            echo('<p class="register-error">' . $_SESSION['error'] . '</p>');
+                            unset($_SESSION['error']);
+                        }
+                    ?>
                     <a href="./login-screen.php">Masz już konto? Zaloguj się</a>
                 </form>
             </div>

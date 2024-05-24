@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $full_name = $_POST['name'] . ' ' . $_POST['surname'];
 $email = $_POST['email'];
 $login = $_POST['login'];
@@ -12,25 +14,29 @@ $conn = new mysqli($db_host, $db_user, $db_password, $db_name);
 
 // check if login is alphanumeric
 if (!ctype_alnum($login)) {
-    echo("Login must be alphanumeric");
+    $_SESSION['error'] = "Login musi składać się z liter i cyfr";
+    header('Location: ./register-screen.php');
     exit();
 }
 
 // check if e-mail is valid
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo("Invalid e-mail address");
+    $_SESSION['error'] = "E-mail jest nieprawidłowy";
+    header('Location: ./register-screen.php');
     exit();
 }
 
 // check if passwords are the same
 if ($password != $password2) {
-    echo("Passwords are not the same");
+    $_SESSION['error'] = "Hasła nie są takie same";
+    header('Location: ./register-screen.php');
     exit();
 }
 
 // check if password is at least 8 characters long
 if (strlen($password) < 8) {
-    echo("Password must be at least 8 characters long");
+    $_SESSION['error'] = "Hasło musi mieć co najmniej 8 znaków";
+    header('Location: ./register-screen.php');
     exit();
 }
 
@@ -38,7 +44,8 @@ if (strlen($password) < 8) {
 $sql = "SELECT * FROM users WHERE username = '$login' OR email = '$email'";
 if ($result = $conn->query($sql)) {
     if ($result->num_rows > 0) {
-        echo("User with this login or e-mail already exists");
+        $_SESSION['error'] = "Użytkownik o podanym loginie lub e-mailu już istnieje";
+        header('Location: ./register-screen.php');
         exit();
     }
 } else {

@@ -1,3 +1,13 @@
+<?php
+
+    session_start();
+    if(!isset($_SESSION['logged'])){
+        header('Location: ./login-screen.php');
+        exit();
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -22,6 +32,7 @@
                 <li><a href="./index.php">Strona główna</a></li>
                 <li><a href="./meet-us.php">Poznaj ekipę</a></li>
                 <li><a href="./services.php">Usługi</a></li>
+                <li><a href="./profile.php">Mój profil</a></li>
                 <li><a href="./make-an-appointment.php"><b>Umów się</b></a></li>
             </ul>
             <div class="menu-toggle">
@@ -35,6 +46,7 @@
                 <li><a href="./index.php">Strona główna</a></li>
                 <li><a href="./meet-us.php">Poznaj ekipę</a></li>
                 <li><a href="./services.php">Usługi</a></li>
+                <li><a href="./profile.php">Mój profil</a></li>
                 <li><a href="./make-an-appointment.php"><b>Umów się</b></a></li>
             </ul>
         </nav>

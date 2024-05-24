@@ -51,6 +51,7 @@ $conn->close();
                 <li><a href="./index.php">Strona główna</a></li>
                 <li><a href="./meet-us.php">Poznaj ekipę</a></li>
                 <li><a href="./services.php"><b>Usługi</b></a></li>
+                <li><a href="./profile.php">Mój profil</a></li>
                 <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
               <div class="menu-toggle">
@@ -60,6 +61,7 @@ $conn->close();
                 <li><a href="./index.php">Strona główna</a></li>
                 <li><a href="./meet-us.php">Poznaj ekipę</a></li>
                 <li><a href="./services.php"><b>Usługi</b></a></li>
+                <li><a href="./profile.php">Mój profil</a></li>
                 <li><a href="./make-an-appointment.php">Umów się</a></li>
               </ul>
         </nav>

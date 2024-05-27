@@ -33,5 +33,9 @@ $(document).ready(function() {
         window.location.href = '/jacar_project/service.php?service=' + chosenService;
     });
 
-    
+    // login / register
+
+    $('#login-back, #register-back').on('click', () => {
+        window.location.href = '/jacar_project/index.php';
+    });
 });

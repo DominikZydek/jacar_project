@@ -33,37 +33,6 @@
     max-width: 100px;
   }
 
-  .testimonials h2 {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .testimonials-slider {
-    padding: 0;
-  }
-
-  .testimonials-slider .card:nth-child(2),
-  .testimonials-slider .card:nth-child(4) {
-    display: none;
-  }
-
-  .testimonials-slider .card {
-    max-width: 50%;
-  }
-
-  .testimonial-person {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .card .rating {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
   .contact-form h2 {
     font-size: 26px;
   }
@@ -207,11 +176,6 @@
     height: auto;
   }
 
-  .testimonials,
-  .testimonials-slider {
-    height: auto;
-  }
-
   .contact-form textarea {
     width: 350px;
   }
@@ -306,6 +270,12 @@
     padding: 20px 20px;
     min-width: auto;
     width: 75%;
+  }
+
+  .login-screen svg,
+  .register-screen svg {
+    position: static;
+    width: 30px;
   }
 
   .login-screen h2,

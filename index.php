@@ -74,20 +74,20 @@
         <div id="contact-form" class="contact-form">
             <h2>Masz nietypowe pytanie? Zastanawiasz się co dzieje się z twoim pojazdem?</h2>
             <h3>Napisz do nas!</h3>
-            <form action="#">
+            <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="left-side">
                     <label for="first-name">Podaj dane:</label>
-                    <input type="text" id="first-name" placeholder="Imię">
-                    <input type="text" placeholder="Nazwisko">
-                    <input type="email" placeholder="E-mail">
+                    <input type="text" id="first-name" name="first-name" placeholder="Imię" required>
+                    <input type="text" id="last-name" name="last-name" placeholder="Nazwisko" required>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required>
                     <div class="attachment">
                         <label for="attach">Dodaj załącznik:</label><br>
-                        <input type="file" id="attach">
+                        <input type="file" id="attach" name="attach">
                     </div>
                 </div>
                 <div class="right-side">
                     <label for="message">Napisz wiadomość:</label>
-                    <textarea id="message"></textarea>
+                    <textarea id="message" name="message"></textarea>
                     <button type="submit">Wyślij</button>
                     </div>
             </form>

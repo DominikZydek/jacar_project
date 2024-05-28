@@ -98,7 +98,7 @@
                 }
                 echo("</table>");
             } else {
-                echo("<h2>Brak umówionych wizyt</hecho>");
+                echo("<h2>Brak umówionych wizyt</h2>");
             }
 
             ?>
